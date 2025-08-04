@@ -3,7 +3,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from uuid import UUID
-from db import database  
+import database  
 
 router = APIRouter()
 
