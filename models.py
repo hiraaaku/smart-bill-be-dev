@@ -21,8 +21,8 @@ class Receipt(Base):
     __tablename__ = "receipts"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"))
-    image_url = Column(String)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+    image_url = Column(String, nullable=False)
     raw_ocr_result = Column(JSON, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
@@ -72,14 +72,7 @@ class Split(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     receipt_id = Column(UUID(as_uuid=True), ForeignKey("receipts.id"))
-    result = Column(JSON)  # {participant_id: total_amount}
+    result = Column(JSON)
 
     receipt = relationship("Receipt", back_populates="splits")
 
-class Receipt(Base):
-    __tablename__ = "receipts"
-
-    id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id = Column(PG_UUID(as_uuid=True), nullable=False)
-    image_url = Column(String, nullable=False)
-    raw_ocr_result = Column(JSON, nullable=True)
