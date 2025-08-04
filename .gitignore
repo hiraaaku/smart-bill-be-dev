@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+smart-bill-firebase-service-account-key.json
+test.jpg
