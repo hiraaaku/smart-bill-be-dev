@@ -1,6 +1,7 @@
 # routers/upload.py
 import shutil
 import uuid
+import os
 from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Depends
 from sqlalchemy.orm import Session
 from database import SessionLocal
@@ -19,31 +20,32 @@ def get_db():
 @router.post("/upload")
 async def upload_receipt_image(
     file: UploadFile = File(...),
-    user_id: str = Form(...),  # nanti bisa ganti ke JWT auth
+    user_id: str = Form(...),
     db: Session = Depends(get_db)
 ):
     try:
-        # Simpan file sementara ke lokal
+        # 1. Simpan file sementara ke lokal
         temp_path = f"temp_{uuid.uuid4().hex}_{file.filename}"
         with open(temp_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        # Upload ke Firebase
+        # 2. Upload ke Firebase dan dapatkan URL
         image_url = upload_image_to_firebase(temp_path)
 
-        # Simpan ke DB
+        # 3. Simpan metadata ke PostgreSQL
         receipt = Receipt(
             user_id=user_id,
             image_url=image_url,
-            raw_ocr_result=None
+            raw_ocr_result=None  # akan diisi nanti saat parsing
         )
         db.add(receipt)
         db.commit()
         db.refresh(receipt)
 
-        # Hapus file lokal
-        shutil.os.remove(temp_path)
+        # 4. Hapus file lokal
+        os.remove(temp_path)
 
+        # 5. Kirim response
         return {
             "message": "Upload successful",
             "receipt_id": str(receipt.id),
