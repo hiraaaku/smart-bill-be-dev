@@ -10,11 +10,16 @@ from fastapi import Path
 from fastapi.responses import JSONResponse
 from sqlalchemy import text
 
+from typing import Dict, List
+
 
 router = APIRouter()
 
 class OCRUpdateRequest(BaseModel):
     raw_ocr_result: dict  # atau pakai Any kalau perlu fleksibel
+
+class ItemOwnersUpdateRequest(BaseModel):
+    item_owners: Dict[str, List[str]]
 
 # Dependency untuk inject DB session
 def get_db():
@@ -56,3 +61,22 @@ def update_ocr_result(receipt_id: UUID, payload: OCRUpdateRequest, db: Session =
     db.commit()
 
     return {"message": "OCR result updated"}
+
+
+@router.patch("/receipts/{receipt_id}/owners")
+async def update_item_owners(receipt_id: UUID, payload: ItemOwnersUpdateRequest):
+    query = """
+    UPDATE receipts
+    SET item_owners = :item_owners
+    WHERE id = :receipt_id
+    """
+    values = {
+        "receipt_id": receipt_id,
+        "item_owners": payload.item_owners,
+    }
+
+    import database
+    result = await database.execute(query=query, values=values)
+    if result == 0:
+        raise HTTPException(status_code=404, detail="Receipt not found")
+    return {"message": "Item owners updated"}
