@@ -75,3 +75,11 @@ class Split(Base):
     result = Column(JSON)  # {participant_id: total_amount}
 
     receipt = relationship("Receipt", back_populates="splits")
+
+class Receipt(Base):
+    __tablename__ = "receipts"
+
+    id = Column(PG_UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(PG_UUID(as_uuid=True), nullable=False)
+    image_url = Column(String, nullable=False)
+    raw_ocr_result = Column(JSON, nullable=True)
