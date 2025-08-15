@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hira-efata-playground",
+  "private_key_id": "d14cb64c71e46395927a043516dd64eda1b79d07",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCsgD7N14slzJ2i\nwfuNNS00xBL3rzQFlz3rB2BWZLA8RAEidZbNWvaaoIKCyp82wdr3XR4zsH+Rdhbb\nbma5cNtBhHjmtsXmIlCPpneyQxyAIoQlh1fWZQkZCk5S/f9YaduoB7INSUEei9XE\nX7MSxjBuVefhVYcjg4pZUlW5lRq13N7D4F/Xkb076uBixeAHcZY0xVm3KKK3VTaS\nQU7H7dovXF7wALYR5bLGtDxQUasFAnrxgtQ0ECC6jZfwjuaKoeNEt6SWkAHpkpL+\nc4YwVsEjM/R6lY9ls3SfBe/Z20O5iLPqq0DvVdtQULA+gSJFWTvKx4LsAQyW73nc\n/PzHkG4dAgMBAAECggEADRCDcSyPbdPy5mZBqn6qB1KISzj6PCgpuNisq65hiJbv\n7Q+x1ai7f5eDeutkpo2FC3ICfRCzgK1Mat8QKaBKAsrJK1QRZe4YYuDNNPOPP4cd\nsgfvl528VCirKO7yvVv7Fl1K12XCaFFX5dEHq3bWKS0ZbEABhaeLPVuWgYEw7jAF\njdk4QBkCbVNMih4Cp0rBMxnjFm5T5uqMNDHhLJSUrxWTGwq6pC9KJ4qlD7tk9YuA\nxg15T8PUUQtMaojLPenjclprm7/RmnrUabS1BFhc5X4D/1zRtVltg9ESowARcvJq\n2vrwUmPdyQ4vIlNL/QWmlb3bgFc5wiIShTSudVEuowKBgQDxZUM+VCeMu91ZxeJP\nn/TejJbnFrO2lmrkmym7j4qXvZicq+opRXgQRrthG1tCkMqj/Godgnkgy4iFysij\n57biabQifjnK7QhZHtdMs/vg15G0axdmPvJ++9UnjUl1deR6cQuFUYrOqo3tk1Mm\nhmQS3mSjN8HxjyD2jEdIX8IsiwKBgQC27/E4p6JHEs1YiJdLU+SRMDXDC0AQqG9o\nO9bacxGTE2RiU+EHqII/dLaGCN3s1AYAFji/6eDaZHq4DVD8oulIYTJkqXN3XUZv\nLQvTGovcgxVEMWNWWXjjaxi5cPjVGOrRMVMF5TeIEvnBypfhKuZt4wCVEAp+EI7B\nqCxSfNDc9wKBgGPqG/kScARKRgZAZ7m5ZWswGc2wkdYDUF8q8g0WDrFb4m0GozdN\n77Ic9LXu0skskRNrCKkKNgSi+fEWzBE7eXEhe1PDlzws/AWXRFoVLS4VS9O3d8n0\nR/7TUZi7XCpoD5e2bqRR6fg8k94/2mzZt1YwAsuj6nyHV4d07JRCPmadAoGAQ1du\nZ9mlrh4ow0d80jjusdeaYtM4YSlv4WHtxHqJZKfF00BnXQdV8wAG1K5c63pdPxjv\nCQ6SPDKyzh/wyR87Wu6Uu2N5Yt5OOEzPxoVGKQWEBZdcpwPGsYjSECmbH+7NOfa7\nRjdLyuaZVBI8+KFvM9JVe4ntItz7gCRlNHRH+p8CgYBp9qN71NcWUEfFgCKKnT1r\naa+dg2uN0uolCA9RqJb/8Di9EWhhHsTKyNYuCK5wJTkfJtqs1cUcLocHlMEvybg1\nO+qa33jkffMs3kzGFfLcoBZrWpf1ahtigSsu07DVBbU98Gg4C1fqCZeRu6kxuOfa\na1VioM3y/OIyh7Iony7Xvg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@hira-efata-playground.iam.gserviceaccount.com",
+  "client_id": "104429735034592614017",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40hira-efata-playground.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
