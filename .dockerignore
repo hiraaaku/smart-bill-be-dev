@@ -1,0 +1,33 @@
+# .dockerignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.DS_Store
+.git
+.github
+.vscode
+*.jpg
+*.jpeg
+*.png
+*.json  # kecuali firebase key
+!firebase-split-service-key.json
+.DS_Store
+.dockerignore
+Dockerfile
+README.md
+requirements.txt
